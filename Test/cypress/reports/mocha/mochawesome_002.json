@@ -1,0 +1,149 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 2,
+    "pending": 0,
+    "failures": 1,
+    "start": "2020-02-05T11:44:21.846Z",
+    "end": "2020-02-05T11:44:35.466Z",
+    "duration": 13620,
+    "testsRegistered": 3,
+    "passPercent": 66.66666666666666,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "45774edf-b34e-475d-ade8-e3219fbbb49d",
+      "title": "",
+      "fullFile": "cypress\\integration\\TestProject\\TC03_IdentifyElements.spec.js",
+      "file": "cypress\\integration\\TestProject\\TC03_IdentifyElements.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "75c62253-81de-4593-8d19-22ff9c95636b",
+          "title": "Create and mark-unmark as favorite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Sign in",
+              "fullTitle": "Create and mark-unmark as favorite Sign in",
+              "timedOut": null,
+              "duration": 4360,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://react-redux.realworld.io/#/login');\ncy.title().should('eq', 'Conduit'); //Command used to validate the title\ncy.location('protocol').should('eq', 'https:');\ncy.get('input[type=\"email\"]').type('ann.maria@amazecodes.com');\ncy.get('input[type=\"password\"]').type('Admin@123');\ncy.get('.btn').contains('Sign in').click();\ncy.contains('Your Feed', {\n  timeout: 10000\n}).should('be.visible'); //timeout is mentioned to increase the default time given",
+              "err": {},
+              "uuid": "99d48f02-e4de-4503-a499-ae27d9445843",
+              "parentUUID": "75c62253-81de-4593-8d19-22ff9c95636b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Create a post",
+              "fullTitle": "Create and mark-unmark as favorite Create a post",
+              "timedOut": null,
+              "duration": 1808,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('ul.navbar-nav').children().contains('New Post').click();\ncy.hash().should('include', '#/editor');\ncy.get('form').within(function ($form) {\n  cy.get('input').first().type('Test');\n  cy.get('input').eq(1).type('Test 1');\n  cy.get('textarea').last().type('Test 2');\n  cy.contains('Publish Article').click();\n});\ncy.url().should('include', 'article');",
+              "err": {},
+              "uuid": "bd79b557-2cf9-478b-8500-0918a4fb3c2b",
+              "parentUUID": "75c62253-81de-4593-8d19-22ff9c95636b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Mark-unmark as favorite",
+              "fullTitle": "Create and mark-unmark as favorite Mark-unmark as favorite",
+              "timedOut": null,
+              "duration": 7291,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('ul.navbar-nav').children().contains('AnMic').click();\ncy.contains('My Articles').should('be.visible');\ncy.get('.ion-heart').first().click();\ncy.contains('Favorited Articles').click();\ncy.url().should('include', 'favorites');\ncy.get('.ion-heart').first().click();\ncy.reload();\ncy.contains('No articles are here... yet.').should('be.visible');\ncy.go('back');",
+              "err": {
+                "message": "CypressError: Timed out retrying: Expected to find content: 'No articles are here... yet.' but never did.",
+                "estack": "CypressError: Timed out retrying: Expected to find content: 'No articles are here... yet.' but never did.\n    at Object.cypressErr (https://react-redux.realworld.io/__cypress/runner/cypress_runner.js:86207:11)\n    at Object.throwErr (https://react-redux.realworld.io/__cypress/runner/cypress_runner.js:86162:18)\n    at Object.throwErrByPath (https://react-redux.realworld.io/__cypress/runner/cypress_runner.js:86194:17)\n    at retry (https://react-redux.realworld.io/__cypress/runner/cypress_runner.js:76849:16)\n    at onFailFn (https://react-redux.realworld.io/__cypress/runner/cypress_runner.js:65634:16)\n    at tryCatcher (https://react-redux.realworld.io/__cypress/runner/cypress_runner.js:120203:23)\n    at Promise._settlePromiseFromHandler (https://react-redux.realworld.io/__cypress/runner/cypress_runner.js:118139:31)\n    at Promise._settlePromise (https://react-redux.realworld.io/__cypress/runner/cypress_runner.js:118196:18)\n    at Promise._settlePromise0 (https://react-redux.realworld.io/__cypress/runner/cypress_runner.js:118241:10)\n    at Promise._settlePromises (https://react-redux.realworld.io/__cypress/runner/cypress_runner.js:118316:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (https://react-redux.realworld.io/__cypress/runner/cypress_runner.js:114928:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://react-redux.realworld.io/__cypress/runner/cypress_runner.js:114938:10)\n    at Async.drainQueues (https://react-redux.realworld.io/__cypress/runner/cypress_runner.js:114812:14)",
+                "diff": null
+              },
+              "uuid": "2de2803b-a44d-429a-838a-d011d4a3e282",
+              "parentUUID": "75c62253-81de-4593-8d19-22ff9c95636b",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "99d48f02-e4de-4503-a499-ae27d9445843",
+            "bd79b557-2cf9-478b-8500-0918a4fb3c2b"
+          ],
+          "failures": [
+            "2de2803b-a44d-429a-838a-d011d4a3e282"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 13459,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "6.2.2"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false
+      },
+      "version": "4.1.0"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "4.1.0"
+    }
+  }
+}

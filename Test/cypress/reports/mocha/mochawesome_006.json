@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2020-02-05T11:45:53.093Z",
+    "end": "2020-02-05T11:46:06.544Z",
+    "duration": 13451,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "8c302c38-73b8-46a1-9e93-6909466338e5",
+      "title": "",
+      "fullFile": "cypress\\integration\\TestProject\\TC07_plugin_uploadFile.spec.js",
+      "file": "cypress\\integration\\TestProject\\TC07_plugin_uploadFile.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d7ba78ef-992e-4b1c-a1a2-77aedd747b52",
+          "title": "Working with plugins",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "File upload",
+              "fullTitle": "Working with plugins File upload",
+              "timedOut": null,
+              "duration": 2199,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://cgi-lib.berkeley.edu/ex/fup.html'); // upload file\nvar fileName = 'SampleFile.pdf';\ncy.fixture(fileName).then(function (fileContent) {\n  cy.get('[type=\"file\"]').upload({\n    fileContent: fileContent,\n    fileName: fileName,\n    mimeType: 'application/pdf'\n  });\n});\ncy.get('[type=\"submit\"]').click();\ncy.contains(\"You've uploaded a file.  Your notes on the file were:\");",
+              "err": {},
+              "uuid": "4d633d12-acb9-42e0-972f-f7571d7a86f1",
+              "parentUUID": "d7ba78ef-992e-4b1c-a1a2-77aedd747b52",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "4d633d12-acb9-42e0-972f-f7571d7a86f1"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2199,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "6.2.2"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false
+      },
+      "version": "4.1.0"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "4.1.0"
+    }
+  }
+}
